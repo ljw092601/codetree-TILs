@@ -13,9 +13,9 @@ int LCM(int a, int b) {
 }
 
 int get_LCMs(int n) {
-    if (n==1) return 1;
     int new_n;
     cin >> new_n;
+    if (n==1) return new_n;
     return LCM(new_n, get_LCMs(n-1));
 }
 
