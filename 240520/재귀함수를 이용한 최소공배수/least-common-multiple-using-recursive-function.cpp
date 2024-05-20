@@ -2,7 +2,7 @@
 using namespace std;
 
 int GCD(int a, int b) {
-    for (int i=2; i<=a; i++) {
+    for (int i=a; i>1; i--) {
         if (a%i==0 && b%i==0) return i;
     }
     return 1;
@@ -11,6 +11,7 @@ int GCD(int a, int b) {
 int LCM(int a, int b) {
     return a*b/GCD(a,b);
 }
+
 
 int get_LCMs(int n) {
     int new_n;
