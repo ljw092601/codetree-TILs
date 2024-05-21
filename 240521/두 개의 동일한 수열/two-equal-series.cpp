@@ -26,6 +26,6 @@ int main() {
     for (int i=0; i<n; i++) {
         if(a_vec[i] != b_vec[i]) is_same = false;
     }
-    cout << ((is_same) ? "Yes" : "NO") << endl;
+    cout << ((is_same) ? "Yes" : "No") << endl;
     return 0;
 }
