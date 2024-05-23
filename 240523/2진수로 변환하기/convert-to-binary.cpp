@@ -6,7 +6,11 @@ int main() {
     int n;
     cin >> n;
     vector<int> bin_vec;
-    while(n > 0) {
+    while(true) {
+        if (n<2) {
+            bin_vec.emplace_back(n);
+            break; 
+        }
         bin_vec.emplace_back(n%2);
         n /= 2;
     }
