@@ -20,7 +20,7 @@ int main() {
         stu_vec.push_back(stu);
     }
     sort(stu_vec.begin(), stu_vec.end(), [](auto a, auto b){
-        if (a.height == b.height) return a.weight < b.weight;
+        if (a.height == b.height) return a.weight > b.weight;
         return a.height < b.height;
     });
     for (Student s : stu_vec) {
