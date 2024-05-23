@@ -24,12 +24,13 @@ int main() {
         f_day += num_of_days[i];
     }
     f_day += d1;
+    f_day += weekday;
     int s_day = 0;
     for (int i=0; i<m2; i++) {
         s_day += num_of_days[i];
     }
     s_day += d2;
     int diff_day = s_day - f_day;
-    cout << (diff_day - weekday) / 7 + 1;
+    cout << ((diff_day >= 0) ? diff_day / 7 + 1 : 0);
     return 0;
 }
