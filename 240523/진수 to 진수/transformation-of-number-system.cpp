@@ -19,12 +19,12 @@ int main() {
     int de = n_to_decimal(a, n);
     vector<int> bin_vec;
     while(true) {
-        if (de<2) {
+        if (de<b) {
             bin_vec.emplace_back(de);
             break; 
         }
-        bin_vec.emplace_back(de%2);
-        de /= 2;
+        bin_vec.emplace_back(de%b);
+        de /= b;
     }
     for (int i= bin_vec.size()-1; i >= 0; i--) cout << bin_vec[i];
     return 0;
