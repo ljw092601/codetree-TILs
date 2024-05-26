@@ -20,6 +20,7 @@ int main() {
         }
         else cnt++;
     }
+    if(max < cnt) max = cnt;
     cout << max;
     return 0;
 }
