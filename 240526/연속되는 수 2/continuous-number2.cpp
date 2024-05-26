@@ -12,10 +12,14 @@ int main() {
         cin >> num;
         num_vec.push_back(num);
     }
-    int cnt = 0;
+    int max = 0, cnt = 0;
     for (int i=0; i<n; i++) {
-        if (i == 0 || num_vec[i] != num_vec[i-1]) cnt++;
+        if (i == 0 || num_vec[i] != num_vec[i-1]) {
+            if(max < cnt) max = cnt;
+            cnt = 0;
+        }
+        cnt++;
     }
-    cout << cnt;
+    cout << max;
     return 0;
 }
