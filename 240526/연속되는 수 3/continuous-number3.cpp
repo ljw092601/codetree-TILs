@@ -22,6 +22,7 @@ int main() {
         }
         cont++;
     }
+    cont_vec.push_back(cont);
     auto max = max_element(cont_vec.begin(), cont_vec.end());
     cout << *max;
     return 0;
