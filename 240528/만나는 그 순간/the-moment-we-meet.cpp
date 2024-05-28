@@ -42,11 +42,14 @@ int main() {
             }
         }
     }
+    bool meet = false;
     for (int i=0; i<move_a.size(); i++) {
         if(move_a[i] == move_b[i]) {
+            meet = true;
             cout << i+1;
             break;
         }
     }
+    if (!meet) cout << -1;
     return 0;
 }
