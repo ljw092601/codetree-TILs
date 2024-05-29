@@ -29,8 +29,8 @@ int main() {
                 comeback = true;
                 break;
             }
-            if(comeback) break;
         }
+        if(comeback) break;
     }
     if(!comeback) cout << -1;
     return 0;
