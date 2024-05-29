@@ -4,8 +4,8 @@ using namespace std;
 int direction(char d) {
     if (d == 'R') return 1;
     if (d == 'L') return 2;
-    if (d == 'U') return 0;
-    if (d == 'D') return 3;
+    if (d == 'U') return 3;
+    if (d == 'D') return 0;
 }
 
 bool in_range(int x, int y, int n) {
