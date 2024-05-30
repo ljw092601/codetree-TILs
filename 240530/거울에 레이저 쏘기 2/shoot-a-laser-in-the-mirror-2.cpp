@@ -21,7 +21,16 @@ pair<int,int> start_tile(int st, int n) {
     if (n*3 < st && st <= n*4) return make_pair(4*n-st, 0);
 }
 
+int change_r (int d) {
+    if(d == 0) return 1;
+    if(d == 1) return 0;
+    if(d == 2) return 3;
+    if(d == 3) return 2;
+}
+
 int main() {
+    int arr_x[4] = {1,0,-1,0};
+    int arr_y[4] = {0,-1,0,1};
     int n;
     cin >> n;
     vector<vector<char>> d_vec;
@@ -43,15 +52,11 @@ int main() {
     while(in_range(x, y, n)) {
         reflect++;
         if(d_vec[x][y] == '/') {
-            int arr_x[4] = {1,0,-1,0};
-            int arr_y[4] = {0,1,0,-1};
-            dir = 3 - dir;
+            dir = change_r(dir);
             x += arr_x[dir];
             y += arr_y[dir];
         }
         else if (d_vec[x][y] == '\\') {
-            int arr_x[4] = {1,0,-1,0};
-            int arr_y[4] = {0,-1,0,1};
             dir = 3 - dir;
             x += arr_x[dir];
             y += arr_y[dir];
