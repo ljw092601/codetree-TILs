@@ -29,7 +29,7 @@ int main() {
             y += arr_y[direction%4];
             number++;
             code++;
-            if (code > 'Z') code == 'A';
+            if (code > 'Z') code = 'A';
         }
         else {
             direction++;
