@@ -21,7 +21,7 @@ int main() {
             if (board[0][0] != board[i][p]) {
                 for(int t=i+1; t<n-1; t++) {
                     for(int r=p+1; r<m-1; r++) {
-                        if (board[0][0] == board[t][r]) possible++;
+                        if (board[0][0] == board[t][r] && board[0][0] != board[n-1][m-1]) possible++;
                     }
                 }
             }
