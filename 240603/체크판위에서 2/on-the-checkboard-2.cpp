@@ -17,10 +17,10 @@ int main() {
     }
     int possible = 0;
     for (int i=1; i<n-2; i++) {
-        for (int p=1; p<n-2; p++) {
+        for (int p=1; p<m-2; p++) {
             if (board[0][0] != board[i][p]) {
                 for(int t=i+1; t<n-1; t++) {
-                    for(int r=p+1; r<n-1; r++) {
+                    for(int r=p+1; r<m-1; r++) {
                         if (board[0][0] == board[t][r]) possible++;
                     }
                 }
