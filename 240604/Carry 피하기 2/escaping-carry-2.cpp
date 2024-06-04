@@ -29,6 +29,6 @@ int main() {
             }
         }
     }
-    cout << max;
+    cout << ((max) ? max : -1);
     return 0;
 }
