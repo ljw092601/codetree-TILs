@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <climits>
 using namespace std;
 
 int main() {
@@ -9,7 +10,7 @@ int main() {
     for(int i=0; i<n; i++) {
         cin >> rooms[i];
     }
-    int min_dist = n*100;
+    int min_dist = INT_MAX;
     for (int i=0; i<n; i++) {
         int dist = 0;
         for(int p=i; p<i+n; p++) {
