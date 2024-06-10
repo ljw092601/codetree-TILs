@@ -1,44 +1,54 @@
 #include <iostream>
-#include <vector>
+#include <algorithm>
+
+#define MAX_NUM 100
+
 using namespace std;
 
+int n, k;
+int arr[MAX_NUM + 1];
+
 int main() {
-    int n;
+    // 입력
     cin >> n;
-    char arr[110] = {'\0',};
-    while(n--) {
-        int idx;
-        char c;
-        cin >> idx >> c;
-        arr[idx] = c;
+    for(int i = 0; i < n; i++) {
+        int x; char c;
+        cin >> x >> c;
+        
+        if(c == 'G')
+            arr[x] = 1;
+        else
+            arr[x] = 2;
     }
-    int max_dist = 0;
-    for(int i=0; i<100; i++) {
-        for(int p=0; p<=100-i; p++) {
-            int cnt_G = 0, cnt_H = 0;
-            int first=0, end=0;
-            bool find_first = false;
-            for(int k=p; k<=p+i; k++) {
-                if(!find_first) {
-                    if(arr[k] == 'G' || arr[k] == 'H') {
-                        first = k;
-                        find_first = true;
-                    }
-                }
-                if(arr[k] == 'G') {
-                    cnt_G++;
-                    end = k;
-                }
-                if(arr[k] == 'H') {
-                    cnt_H++;
-                    end = k;
-                }
-            }
-            if(cnt_G == 0 || cnt_H == 0 || cnt_G == cnt_H) {
-                if(max_dist < end-first) max_dist = end-first;
-            }
-        }
+    
+    // 모든 구간의 시작점을 잡아봅니다.
+    int max_len = 0;
+    for(int i = 0; i <= MAX_NUM; i++) {
+		for(int j = i + 1; j <= MAX_NUM; j++) {
+			// i와 j 위치에 사람이 있는지 확인합니다.
+			if(arr[i] == 0 || arr[j] == 0)
+				continue;
+			
+			// 해당 구간 내 g와 h의 개수를 구합니다.
+			int cnt_g = 0;
+			int cnt_h = 0;
+			
+			for(int k = i; k <= j; k++) {
+				if(arr[k] == 1)
+					cnt_g++;
+				if(arr[k] == 2)
+					cnt_h++;
+			}
+			
+			// 조건을 만족할 때 구간의 길이를 구해 최댓값과 비교합니다.
+			if(cnt_g == 0 || cnt_h == 0 || cnt_g == cnt_h) {
+				int len = j - i;
+				max_len = max(max_len, len);
+			}
+		}
     }
-    cout << max_dist;
+                        
+    cout << max_len;
+	
     return 0;
 }
