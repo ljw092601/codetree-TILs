@@ -14,7 +14,7 @@ int main() {
     }
     int max_dist = 0;
     for(int i=0; i<100; i++) {
-        for(int p=0; p<100-i; p++) {
+        for(int p=0; p<=100-i; p++) {
             int cnt_G = 0, cnt_H = 0;
             int first=0, end=0;
             bool find_first = false;
