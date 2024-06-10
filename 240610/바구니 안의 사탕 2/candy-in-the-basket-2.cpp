@@ -4,6 +4,7 @@ using namespace std;
 int main() {
     int n, k;
     cin >> n >> k;
+    if(k > 50) k = 50;
     int basket[100] = {0,};
     while(n--) {
         int cnt, idx;
