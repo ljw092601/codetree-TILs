@@ -12,7 +12,7 @@ int main() {
         cin >> field[i];
     }
     int min_work = INT_MAX;
-    for (int i=0; i<n-t; i++) {
+    for (int i=0; i<=n-t; i++) {
         int work = 0;
         for(int p=0; p<t; p++) {
             work += abs(h - field[i+p]);
