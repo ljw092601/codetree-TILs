@@ -13,7 +13,7 @@ int main() {
     int sum = accumulate(begin(arr), end(arr), 0);
     for (int i=0; i<4; i++) {
         for (int j=i+1; j<5; j++) {
-            for (int k=0; k<6; k++) {
+            for (int k=j+1; k<6; k++) {
                 int team1 = arr[i] + arr[j] + arr[k];
                 int diff = abs(team1 - (sum - team1));
                 if (diff < min_diff) min_diff = diff;
