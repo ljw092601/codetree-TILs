@@ -35,8 +35,8 @@ int main() {
     cin >> n;
     vector<int> all_num_vec;
     for (int i=1; i<10; i++) {
-        for (int p=0; p<10; p++) {
-            for (int k=0; k<10; k++) {
+        for (int p=1; p<10; p++) {
+            for (int k=1; k<10; k++) {
                 if(i != p && p != k && k != i) all_num_vec.push_back(i*100+p*10+k);
             }
         }
