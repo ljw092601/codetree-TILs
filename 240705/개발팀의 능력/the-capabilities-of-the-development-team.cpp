@@ -25,7 +25,9 @@ int main() {
                     if(i!=k && i!=t) {
                         int second_team = arr[k] + arr[t];
                         int third_team = all_team - first_team - second_team;
-                        if (diff(first_team, second_team, third_team) != 0 && min_diff > diff(first_team, second_team, third_team)) min_diff = diff(first_team, second_team, third_team);
+                        if (first_team != second_team && second_team != third_team && third_team != first_team) {
+                            if (min_diff > diff(first_team, second_team, third_team)) min_diff = diff(first_team, second_team, third_team);
+                        }
                     }
                 }
             }
