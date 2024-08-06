@@ -17,7 +17,7 @@ int main() {
         sort(copy.begin(), copy.end());
         int cost = 0;
         int gift_num = 0;
-        while(cost < money) {
+        while(cost <= money) {
             cost += copy[gift_num];
             gift_num++;
         }
