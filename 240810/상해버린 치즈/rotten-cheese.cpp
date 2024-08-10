@@ -26,9 +26,13 @@ int main() {
             }
         }
         if (how_many_eat == ill_num) {
-            int need_med = 0;
+            vector<bool> need_med_people(people_num, false);
             for (int k=0; k<eat_num; k++) {
-                if(cheess[k] == i) need_med++;
+                if(cheess[k] == i) need_med_people[people[k]-1] = true;
+            }
+            int need_med = 0;
+            for (bool ill : need_med_people) {
+                if(ill) need_med++;
             }
             if(max_med < need_med) max_med = need_med;
         }
