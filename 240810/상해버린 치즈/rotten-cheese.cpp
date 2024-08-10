@@ -17,7 +17,7 @@ int main() {
         cin >> ill_people[i] >> ill_time[i];
     }
 
-    int max_med = 1;
+    int max_med = 0;
     for(int i=1; i<=cheese_num; i++) {
         int how_many_eat = 0;
         for(int p=0; p<ill_num; p++) {
@@ -25,7 +25,7 @@ int main() {
                 if(cheess[k] == i && people[k] == ill_people[p] && eat_time[k] < ill_time[p]) how_many_eat++;
             }
         }
-        if (how_many_eat == ill_num) {
+        if (how_many_eat >= ill_num) {
             vector<bool> need_med_people(people_num, false);
             for (int k=0; k<eat_num; k++) {
                 if(cheess[k] == i) need_med_people[people[k]-1] = true;
