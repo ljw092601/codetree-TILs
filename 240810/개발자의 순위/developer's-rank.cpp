@@ -15,8 +15,8 @@ int main() {
     }
 
     int pair = 0;
-    for(int i=0; i<N; i++) {
-        for(int p=0; p<N; p++) {
+    for(int i=1; i<=N; i++) {
+        for(int p=1; p<=N; p++) {
             if (i != p) {
                 bool satisfy = true;
                 for (auto g : match) {
