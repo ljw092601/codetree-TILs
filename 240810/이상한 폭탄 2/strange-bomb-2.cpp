@@ -13,7 +13,7 @@ int main() {
     for (int i=0; i<N; i++) {
         int num_boom = 0;
         for(int p=i-K; p<=i+K; p++) {
-            if (0 <= p && p < 6 && p != i) {
+            if (0 <= p && p < N && p != i) {
                 if(boom_vec[p] == boom_vec[i]) num_boom = boom_vec[i];
             }
         }
