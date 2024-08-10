@@ -20,6 +20,6 @@ int main() {
         if (max_num_boom < num_boom) max_num_boom = num_boom;
     }
 
-    cout << max_num_boom;
+    cout << ((max_num_boom) ? max_num_boom : -1);
     return 0;
 }
