@@ -31,8 +31,8 @@ int main() {
     }
 
     int min_M = INT_MAX;
-    for(int i=2; i<max_x; i+=2) {
-        for (int p=2; p<max_y; p+=2) {
+    for(int i=0; i<max_x; i+=2) {
+        for (int p=0; p<max_y; p+=2) {
             int one = 0;
             int two = 0;
             int thr = 0;
