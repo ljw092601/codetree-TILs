@@ -1,7 +1,7 @@
 def get_min():
     s_len = int(input())
     s = input()
-    for i in range(1, int(s_len/2)):
+    for i in range(1, int(s_len/2)+1):
         sub = []
         repeat = False
         for p in range(s_len-i+1):
