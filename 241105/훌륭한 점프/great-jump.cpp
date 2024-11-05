@@ -14,7 +14,7 @@ int main() {
     int min_vec = *min_max.first;
     int max_vec = *min_max.second;
 
-    for (int i=min_vec; i<=max_vec; i++) {
+    for (int i=vec[0]; i<=max_vec; i++) {
         int jump = 0;
         bool fail = false;
         for (int v : vec) {
