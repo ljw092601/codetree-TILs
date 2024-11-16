@@ -15,6 +15,7 @@ int main() {
     for (int i=0; i<m; i++) {
         cin >> log[i].name >> log[i].not_read;
     }
+    if (log[p-1].not_read == 0) return 0;
     vector<char> read_man(n);
     for(int i=0; i<n; i++) {
         read_man[i] = 'A' + i;
