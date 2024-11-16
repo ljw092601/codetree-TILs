@@ -26,6 +26,15 @@ int main() {
             read_man.erase(it);
         }
     }
+    for (Message m : log) {
+        if (m.not_read == log[p-1].not_read && m.name != log[p-1].name) {
+            auto it = find(read_man.begin(), read_man.end(), m.name);
+            if (it != read_man.end()) {
+                read_man.erase(it);
+        }
+        }
+    }
+
     for (char c : read_man) cout << c << " ";
 
     return 0;
