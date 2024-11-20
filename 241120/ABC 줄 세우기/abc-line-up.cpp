@@ -2,6 +2,13 @@
 #include <vector>
 using namespace std;
 
+bool same(const vector<char> v1, const vector<char> v2, int n) {
+    for(int i=0; i<n; i++) {
+        if(v1[i] != v2[i]) return false;
+    }
+    return true;
+}
+
 int main() {
     int n;
     cin >> n;
@@ -14,10 +21,7 @@ int main() {
         original[i] = 'A' + i;
     }
 
-    int diff = 0;
-    for(int i=0; i<n; i++) {
-        if (line[i] != original[i]) diff++;
-    }
-    cout << diff - 1;
+    
+
     return 0;
 }
