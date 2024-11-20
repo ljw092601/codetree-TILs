@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 int max_space(const vector<int>& vec) {
@@ -36,12 +37,15 @@ int main() {
     vector<int> seat;
     int start = 0;
     while(s[start] != '1') start++;
+    int end = n-1;
+    while(s[end] != '1') end--;
+    end = n-end-1;
     for(int i=start; i<n; i++) {
       seat.emplace_back(s[i] - '0');
     }
 
     if (max_space(seat) >= min_space(seat)*2 + 1) cout << min_space(seat)+1;
-    else cout << (max_space(seat)+1) / 2;
+    else cout << max(max(start, (end)), ((max_space(seat)+1))) / 2;
 
     return 0;
 }
