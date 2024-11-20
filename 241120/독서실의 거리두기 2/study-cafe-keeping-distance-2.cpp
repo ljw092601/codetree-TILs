@@ -45,7 +45,7 @@ int main() {
     }
 
     if (max_space(seat) >= min_space(seat)*2 + 1) cout << min_space(seat)+1;
-    else cout << max(max(start, (end)), ((max_space(seat)+1))) / 2;
+    else cout << max(max(start, (end)), ((max_space(seat)+1) / 2));
 
     return 0;
 }
