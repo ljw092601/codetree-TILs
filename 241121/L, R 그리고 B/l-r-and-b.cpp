@@ -25,8 +25,8 @@ int main() {
         vec.emplace_back(v);
     }
 
-    if(bx == lx && lx == rx) cout << abs(ly - by) +1;
-    else if(by == ly && ly == ry) cout << abs(lx - bx) +1;
+    if(bx == lx && lx == rx && (ry-by) * (ry-ly) < 0) cout << abs(ly - by) +1;
+    else if(by == ly && ly == ry && (rx-bx) * (rx-lx) < 0) cout << abs(lx - bx) +1;
     else cout << abs(ly - by) + abs(lx - bx) -1;
 
     return 0;
