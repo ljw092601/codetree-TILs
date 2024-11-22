@@ -58,7 +58,7 @@ int main() {
             for(int v : vec) {
                 if (num == 3) break;
                 if (v < 0) {
-                    p3 *= v;
+                    n3 *= v;
                     num++;
                 }
             }
@@ -68,11 +68,11 @@ int main() {
             for (int v : vec) {
                 if (num_n == 1 && num_p == 2) break;
                 if (v > 0 && num_p != 2) {
-                    p1n2 *= v;
+                    p2n1 *= v;
                     num_p++;
                 }
                 if (v < 0 && num_n != 1) {
-                    p1n2 *= v;
+                    p2n1 *= v;
                     num_n++;
                 }
             }
