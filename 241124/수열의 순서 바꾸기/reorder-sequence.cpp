@@ -11,7 +11,10 @@ int main() {
     }
     int answer = 0;
     for(int i=n-1; i>0; i--) {
-        if (vec[i-1] > vec[i]) answer = i;
+        if (vec[i-1] > vec[i]) {
+            answer = i;
+            break;
+        }
     }
     cout << answer;
     return 0;
