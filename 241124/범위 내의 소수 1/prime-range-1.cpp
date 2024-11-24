@@ -15,7 +15,7 @@ int main() {
         for(int& v:vec) if(v%i == 0) v = 0;
     }
     int min_pri = 0;
-    int sum = 0;
+    long sum = 0;
     bool find_min = false;
     for(int v :vec) {
         if (v != 0) {
