@@ -13,7 +13,7 @@ int main() {
         if (a%2 == 0) even++;
         else odd++;
     }
-    while(even < odd + 1) {
+    while(even < odd) {
         odd -= 2;
         even += 1;
     }
