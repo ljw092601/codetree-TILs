@@ -6,7 +6,7 @@ public class Main {
         for(char c : s.toCharArray()) {
             if (c != ' ') System.out.print(c);
         }
-        String s = sc.nextLine();
+        s = sc.nextLine();
         for(char c : s.toCharArray()) {
             if (c != ' ') System.out.print(c);
         }
