@@ -38,7 +38,7 @@ int main() {
     }
 
     int max_vilige = 0;
-    int max_k = 0;
+    int max_k = 1;
 
     for(int k=1; k<= max_h; k++) {
         vector<vector<int>> maze;
