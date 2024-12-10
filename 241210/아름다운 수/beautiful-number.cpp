@@ -22,8 +22,6 @@ void make_beautiful() {
     if (number.size() > n) return;
     if (number.size() == n) {
         beautiful_number++;
-        for(int k : number) cout << k;
-        cout <<endl;
         return;
     }
     for(int i=1; i<=4; i++) {
