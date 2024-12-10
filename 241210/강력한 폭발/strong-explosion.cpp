@@ -1,11 +1,18 @@
 #include <iostream>
+#include <vector>
 using namespace std;
+
+struct Point {
+    int x;
+    int y;
+};
 
 int n;
 int bomb_pos[20][20];
 bool explosion_area[20][20] = {false};
 int max_area = 0;
 int bomb_num = 0;
+vector<Point> bomb_vec;
 
 void init_explosion() {
     for(int i=0; i<n; i++) {
@@ -44,10 +51,10 @@ void bomb(int bomb_type, int x, int y) {
 
 int cal_area() {
     int area = 0;
-    init_explosion()
+    init_explosion();
     for(int i=0; i<n; i++) {
         for(int p=0; p<n; p++) {
-            if(bomb_pos[i][p]) bomb(bomb_pos, i, p);
+            if(bomb_pos[i][p]) bomb(bomb_pos[i][p], i, p);
         }
     }
     for(int i=0; i<n; i++) {
@@ -64,7 +71,11 @@ void cal_DFS(int a) {
         max_area = max(area, max_area);
         return;
     }
-    
+    for(int i=1; i<=3; i++) {
+        Point p = bomb_vec[a];
+        bomb_pos[p.x][p.y] = i;
+        cal_DFS(a+1);
+    }
 }
 
 int main() {
@@ -72,10 +83,13 @@ int main() {
     for(int i=0; i<n; i++) {
         for(int p=0; p<n; p++) {
             cin >> bomb_pos[i][p];
-            if(bomb_pos == 1) bomb_num++;
+            if(bomb_pos[i][p] == 1) {
+                bomb_num++;
+                bomb_vec.emplace_back(Point{i,p});
+            }
         }
     }
-    cal_DFS(1);
+    cal_DFS(0);
     cout << max_area;
     return 0;
 }
