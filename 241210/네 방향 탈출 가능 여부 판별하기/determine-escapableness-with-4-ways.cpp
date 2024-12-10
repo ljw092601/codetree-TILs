@@ -32,24 +32,18 @@ int main() {
     queue<P> q;
     q.push(P{0,0});
 
-    bool escape = false;
-
     while(!q.empty()) {
         P out = q.front();
         q.pop();
         int x = out.x;
         int y = out.y;
-        if(x == n-1 && y == m-1) {
-            escape = true;
-            break;
-        }
         visited[x][y] = true;
         for(int i=0; i<4; i++) {
             if (canGo(x+dx[i], y+dy[i])) q.push({x+dx[i], y+dy[i]});
         }
     }
 
-    cout << (escape ? 1 : 0);
+    cout << (visited[n-1][m-1] ? 1 : 0);
 
     return 0;
 }
