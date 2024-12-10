@@ -31,15 +31,18 @@ int main() {
     }
     queue<P> q;
     q.push(P{0,0});
+    visited[0][0] = true;
 
     while(!q.empty()) {
         P out = q.front();
         q.pop();
         int x = out.x;
         int y = out.y;
-        visited[x][y] = true;
         for(int i=0; i<4; i++) {
-            if (canGo(x+dx[i], y+dy[i])) q.push({x+dx[i], y+dy[i]});
+            if (canGo(x+dx[i], y+dy[i])) {
+                visited[x+dx[i]][y+dy[i]] = true;
+                q.push({x+dx[i], y+dy[i]});
+            }
         }
     }
 
