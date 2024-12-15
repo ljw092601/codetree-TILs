@@ -28,6 +28,7 @@ void find_dist() {
     dist[1] = 0;
     for(int i=0; i<n; i++) {
         int next = min_idx();
+        if(next == -1) break;
         visited[next] = true;
         for(int p=1; p<=n; p++) {
             if (graph[next][p]) {
