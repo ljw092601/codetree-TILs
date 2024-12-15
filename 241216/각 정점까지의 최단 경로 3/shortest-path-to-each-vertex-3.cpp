@@ -47,7 +47,8 @@ int main() {
     fill_dist();
     find_dist();
     for (int i=2; i<=n; i++) {
-        cout << dist[i] << endl;
+        if(dist[i] == (int) 1e9) cout << -1 << endl;
+        else cout << dist[i] << endl;
     }
     return 0;
 }
