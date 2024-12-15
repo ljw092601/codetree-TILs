@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <climits>
 using namespace std;
 int n, m;
 
@@ -14,7 +15,7 @@ int main() {
 	}
     int st, ed;
     cin >> st >> ed;
-	vector<int> dist(n+1, 1000);
+	vector<int> dist(n+1, INT_MAX);
     vector<bool> visited(n+1, false);
 	vector<int> path;
 	dist[st] = 0;
@@ -27,7 +28,7 @@ int main() {
 				dist[i] = min(dist[i], nodes[cur][i] + dist[cur]);
 			}
 		}
-		int min_d = 2000;
+		int min_d = INT_MAX;
 		for(int k=1; k<n+1; k++) {
 			if(!visited[k] && min_d > dist[k]){
 				min_d = dist[k];
