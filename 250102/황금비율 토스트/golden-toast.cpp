@@ -13,7 +13,7 @@ int main() {
         toast.emplace_back(c);
     }
     vector<char>::iterator it = toast.end();
-    while(m--) {
+    while(n--) {
         char com;
         cin >> com;
         if (com == 'L') {
