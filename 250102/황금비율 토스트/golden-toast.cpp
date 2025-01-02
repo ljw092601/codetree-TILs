@@ -1,41 +1,49 @@
 #include <iostream>
 #include <string>
-#include <vector>
+#include <list>
+ 
 using namespace std;
 
-int main() {
-    int n, m;
+int n, m;
+
+string s;
+
+int main(){
     cin >> n >> m;
-    vector<char> toast;
-    string s;
     cin >> s;
+    
+    list<char> toast;
     for(char c : s) {
-        toast.emplace_back(c);
+        toast.push_back(c);
     }
-    vector<char>::iterator it = toast.end();
-    while(m--) {
-        char com;
-        cin >> com;
-        if (com == 'L') {
-            if (it != toast.begin()) it--;
+    list<char>::iterator it = toast.end();
+    
+    while(m--) { 
+        char command;
+        cin >> command;
+        
+        if(command == 'L') {
+            if(it != toast.begin())
+                it--;
+        } 
+        else if(command == 'R') {
+            if(it != toast.end())
+                it++;
         }
-        else if (com == 'R') {
-            if (it != toast.end()) it++;
+        else if(command == 'D') {
+            if(it != toast.end())
+                it = toast.erase(it);
         }
-        else if (com == 'D') {
-            if (it != toast.end()) {
-                toast.erase(it);
-            }
-        }
-        else {
-            char alpha;
-            cin >> alpha;
-            toast.insert(it, alpha);
-            it++;
-        }
+        else if(command == 'P') {
+            char c;
+            cin >> c;
+            toast.insert(it, c);
+        }    
     }
-    for(char c : toast) {
-        cout << c;
+    
+    // 출력:
+    for (list<char>::iterator it = toast.begin(); it != toast.end(); it++) {
+        cout << *it;
     }
-    return 0;
+    return 0;     
 }
