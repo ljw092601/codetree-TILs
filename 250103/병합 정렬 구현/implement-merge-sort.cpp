@@ -4,9 +4,9 @@ using namespace std;
 
 int n;
 int arr[100000];
+int temp[100000];
 
 void marge(int st, int mid, int ed) {
-    int temp[100000];
     int idx = st;
     int i = st;
     int j = mid+1;
@@ -24,20 +24,17 @@ void marge(int st, int mid, int ed) {
         }
     }
 
-    if(i == mid+1) {
-        while(j <= ed) {
-            temp[idx] = arr[j];
-            idx++;
-            j++;
-        }
+    while(j <= ed) {
+        temp[idx] = arr[j];
+        idx++;
+        j++;
     }
-    else {
-        while(i <= ed) {
-            temp[idx] = arr[i];
-            idx++;
-            i++;
-        }
+    while(i <= mid) {
+        temp[idx] = arr[i];
+        idx++;
+        i++;
     }
+
 
     for(int k = st; k<=ed; k++) {
         arr[k] = temp[k];
