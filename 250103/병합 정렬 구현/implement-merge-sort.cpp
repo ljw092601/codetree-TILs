@@ -32,7 +32,7 @@ void marge(int st, int mid, int ed) {
         }
     }
     else {
-        while(j <= ed) {
+        while(i <= ed) {
             temp[idx] = arr[i];
             idx++;
             i++;
@@ -60,7 +60,7 @@ int main() {
         cin >> arr[i];
     }
 
-    marge_sort(0, n);
+    marge_sort(0, n-1);
 
     for(int i=0; i<n; i++) cout << arr[i] << ' ';
 
