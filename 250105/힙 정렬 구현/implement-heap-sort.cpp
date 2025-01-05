@@ -15,12 +15,12 @@ void heapify(int h) {
     int max = arr[h];
     int max_i = h;
 
-    if (max < arr[h*2] && h*2 <= n) {
+    if (h*2 <= n && max < arr[h*2]) {
         max = arr[h*2];
         max_i = h*2;
     }
 
-    if (max < arr[h*2+1] && h*2+1 <= n) {
+    if (h*2+1 <= n && max < arr[h*2+1]) {
         max = arr[h*2+1];
         max_i = h*2+1;
     }
