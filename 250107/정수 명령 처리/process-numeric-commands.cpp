@@ -10,6 +10,7 @@ int main() {
 
     while(n--) {
         string com;
+        cin >> com;
         if (com == "push") {
             int k;
             cin >> k;
@@ -24,6 +25,9 @@ int main() {
         else if (com == "pop") {
             cout << s.top() << endl;
             s.pop();
+        }
+        else {
+            cout << s.top() << endl;
         }
     }
     return 0;
