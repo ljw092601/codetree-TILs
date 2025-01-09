@@ -25,7 +25,9 @@ int main() {
 
     for (int i = 0; i < n; i++) cin >> d[i];
 
-    for(int i=0; i<t%6; i++) move();
+    int mov_cnt = t%(n*2);
+
+    for(int i=0; i<mov_cnt; i++) move();
 
     for (int i = 0; i < n; i++) cout << u[i] << ' ';
     cout << endl;
