@@ -21,7 +21,7 @@ void cal_max(int x1, int y1, int h1, int w1, int x2, int y2, int h2, int w2) {
 }
 
 bool is_over(int x1, int y1, int h1, int w1, int x2, int y2, int h2, int w2) {
-    return (x1 <= x2 && x2 <= h1 && y1 <= y2 && y2 <= w1) || (x2 <= x1 && x1 <= h2 && y2 <= y1 && y1 <= w2);
+    return (x1 <= x2 && x2 <= h1 || x2 <= x1 && x1 <= h2) && (y1 <= y2 && y2 <= w1 || y2 <= y1 && y1 <= w2);
 }
 
 int main() {
@@ -37,8 +37,8 @@ int main() {
         for(int p=0; p<m; p++) {
             for(int k=i; k<n; k++) {
                 for(int j=p; j<m; j++) {
-                    for(int i2=i; i2<n; i2++) {
-                        for(int p2=p; p2<m; p2++) {
+                    for(int i2=0; i2<n; i2++) {
+                        for(int p2=0; p2<m; p2++) {
                             for(int k2=i2; k2<n; k2++) {
                                 for(int j2=p2; j2<m; j2++) {
                                     if(!is_over(i,p,k,j,i2,p2,k2,j2)) {
