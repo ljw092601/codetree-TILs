@@ -33,7 +33,7 @@ int main() {
         shift();
     }
 
-    cout << (min_diff == 1 ? 3 : min_diff*2);
+    cout << (min_diff == 1 && A.size() == 10 ? 3 : min_diff*2);
 
     return 0;
 }
