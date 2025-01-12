@@ -11,6 +11,7 @@ int land_idx() {
             if(grid[i][p]) return i-1;
         }
     }
+    return n-1;
 }
 
 int main() {
