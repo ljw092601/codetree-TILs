@@ -32,16 +32,15 @@ bool cant_go() {
 }
 
 int cal_time() {
-    bool right_wall = true;
     int time = 0;
     for(int g=0; g<N*N; g++) {
         if(!in_range(x,y)) return time;
-        if(cant_go()) {
+        while(cant_go()) {
             turn_L();
         }
         x += dx[dir];
         y += dy[dir];
-        if(right_wall && !is_wall(x, y)) {
+        if(!is_wall(x, y)) {
             turn_R();
         }
         time++;
