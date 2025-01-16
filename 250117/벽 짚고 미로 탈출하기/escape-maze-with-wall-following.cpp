@@ -35,8 +35,10 @@ int cal_time() {
     int time = 0;
     for(int g=0; g<N*N; g++) {
         if(!in_range(x,y)) return time;
-        while(cant_go()) {
+        int rep = 0;
+        while(cant_go() && rep < 4) {
             turn_L();
+            rep++;
         }
         x += dx[dir];
         y += dy[dir];
