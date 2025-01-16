@@ -40,6 +40,7 @@ int cal_time() {
             turn_L();
             rep++;
         }
+        if(rep == 4) return -1;
         x += dx[dir];
         y += dy[dir];
         if(!is_wall(x, y)) {
