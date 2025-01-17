@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <cmath>
 using namespace std;
 
 int n, m, r, c;
@@ -13,8 +13,9 @@ bool in_range(int x, int y) {
 }
 
 void make_booms(int x, int y, int t) {
+    int dist = pow(2,t-1);
     for(int i=0; i<4; i++) {
-        if(in_range(x+dx[i]*t, y+dy[i]*t)) is_boom2[x+dx[i]*t][y+dy[i]*t] = true;
+        if(in_range(x+dx[i]*dist, y+dy[i]*dist)) is_boom2[x+dx[i]*dist][y+dy[i]*dist] = true;
     }
 }
 
