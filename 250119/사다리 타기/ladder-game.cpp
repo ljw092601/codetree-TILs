@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 struct Hori_line {
@@ -16,9 +17,17 @@ Hori_line lines[16];
 vector<Hori_line> selected;
 int answer[16];
 int try_answer[16];
+int min_line = 15;
 
-void go_ladder() {
-    for(int i=1; i<=m; i++) {
+bool is_same_answer() {
+    for(int i=1; i<=n; i++) {
+        if(answer[i] != try_answer[i]) return false;
+    }
+    return true;
+}
+
+void get_answer() {
+    for(int i=1; i<=n; i++) {
         int idx = i;
         int state = 1;
         while(state <= 15) {
@@ -32,8 +41,28 @@ void go_ladder() {
             }
             state++;
         }
+        answer[idx] = i;
+    }
+}
+
+void go_ladder() {
+    for(int i=1; i<=n; i++) {
+        int idx = i;
+        int state = 1;
+        while(state <= 15) {
+            for(Hori_line l : selected) {
+                if(l.a == idx && l.b == state) {
+                    idx++;
+                }
+                else if(l.a+1 == idx && l.b == state) {
+                    idx--;
+                }
+            }
+            state++;
+        }
         try_answer[idx] = i;
     }
+    if(is_same_answer()) min_line = min(min_line, (int)selected.size());
 }
 
 void print() {
@@ -43,7 +72,7 @@ void print() {
 
 void select(int t) {
     if(t > m) {
-        print();
+        go_ladder();
         return;
     }
     selected.emplace_back(lines[t]);
@@ -60,10 +89,11 @@ int main() {
         cin >> line.a >> line.b;
         lines[i] = line;
     }
+    get_answer();
 
-    //select(1);
-    go_ladder();
-    for(int i = 1; i <= m; i++) cout << try_answer[i] << ' ';
+    select(1);
+
+    cout << min_line;
 
     return 0;
 }
