@@ -12,6 +12,7 @@ void cal_xor() {
     for(int i=0; i<n; i++) {
         if(selected[i]) xor_n ^= A[i];
     }
+    cout << xor_n << endl;
     max_xor = max(max_xor, xor_n);
 }
 
@@ -20,7 +21,7 @@ void simulation(int t, int q) {
         cal_xor();
         return;
     }
-    if(t == n+1) return;
+    if(t == n) return;
     selected[t] = 1;
     simulation(t+1, q+1);
     selected[t] = 0;
