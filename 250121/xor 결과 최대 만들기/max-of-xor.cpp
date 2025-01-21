@@ -12,7 +12,6 @@ void cal_xor() {
     for(int i=0; i<n; i++) {
         if(selected[i]) xor_n ^= A[i];
     }
-    cout << xor_n << endl;
     max_xor = max(max_xor, xor_n);
 }
 
