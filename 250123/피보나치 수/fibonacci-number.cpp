@@ -18,7 +18,7 @@ int main() {
     dp[1] = 1;
     dp[2] = 1;
 
-    fibo(3);
+    if(N > 2) fibo(3);
 
     cout << dp[N];
 
