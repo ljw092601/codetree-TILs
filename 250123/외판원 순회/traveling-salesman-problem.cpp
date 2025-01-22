@@ -15,12 +15,16 @@ int a_to_b(int a, int b) {
 
 void cal_dist() {
     int dist = 0;
+    if(a_to_b(1, selected[0]) == 0) return;
     dist += a_to_b(1, selected[0]);
-    for(int i=0; i<n-1; i++) {
+    for(int i=0; i<n-2; i++) {
+        if(a_to_b(selected[i], selected[i+1]) == 0) return;
         dist += a_to_b(selected[i], selected[i+1]);
     }
+    if(a_to_b(selected[n-2], 1) == 0) return;
     dist += a_to_b(selected[n-2], 1);
     min_dist = min(min_dist, dist);
+    
 }
 
 void simulation(int k) {
