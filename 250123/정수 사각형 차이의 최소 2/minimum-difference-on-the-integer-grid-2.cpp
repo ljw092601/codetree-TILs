@@ -23,7 +23,7 @@ int main() {
         }
     }
 
-    dp[0][0] = make_pair(grid[0][0], grid[0][0]);
+    dp[0][0] = make_pair(max(grid[0][0], grid[n-1][n-1]), min(grid[0][0], grid[n-1][n-1]));
 
     for (int i = 1; i < n; i++) {
         dp[0][i] = make_pair(max(dp[0][i-1].first, grid[0][i]), min(dp[0][i-1].second, grid[0][i]));
