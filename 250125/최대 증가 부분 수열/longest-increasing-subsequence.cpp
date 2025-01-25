@@ -9,7 +9,7 @@ int dp[1000];
 void print_max() {
     int max_dp = 0;
     for(int i=0; i<N; i++) max_dp = max(max_dp, dp[i]);
-    cout << max_dp+1;
+    cout << max_dp;
 }
 
 int main() {
@@ -21,13 +21,13 @@ int main() {
     dp[0] = 1;
 
     for(int i=1; i<N; i++) {
+        int max_dp = 0;
         for(int p=0; p<i; p++) {
-            int max_dp = 0;
             if (M[p] < M[i]) {
                 max_dp = max(max_dp, dp[p]+1);
             }
-            dp[i] = max_dp;
         }
+        dp[i] = max_dp;
     }
 
     print_max();
