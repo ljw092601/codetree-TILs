@@ -18,10 +18,8 @@ int main() {
         cin >> M[i];
     }
 
-    dp[0] = 1;
-
-    for(int i=1; i<N; i++) {
-        int max_dp = 0;
+    for(int i=0; i<N; i++) {
+        int max_dp = 1;
         for(int p=0; p<i; p++) {
             if (M[p] < M[i]) {
                 max_dp = max(max_dp, dp[p]+1);
