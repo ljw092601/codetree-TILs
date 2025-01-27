@@ -35,7 +35,7 @@ int main() {
         max_val = max(max_val, dp[i]);
     }
 
-    cout << max_val-1;
+    cout << (max_val ? max_val-1 : 0);
 
     return 0;
 }
