@@ -20,11 +20,10 @@ int main() {
     }
 
     for(int i=0; i<n; i++) {
-        dp[t[i]] = e[i];
-        temp[t[i]] = e[i];
         for(int p=0; p<10001; p++) {
             if(dp[p]) temp[p + t[i]] = max(temp[p + t[i]], dp[p] + e[i]);
         }
+        temp[t[i]] = max(temp[t[i]], e[i]);
         copy();
     }
 
