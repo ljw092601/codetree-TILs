@@ -1,4 +1,5 @@
 #include <iostream>
+#include <climits>
 using namespace std;
 
 int N, M;
@@ -13,7 +14,7 @@ int main() {
     }
 
     for(int i=1; i<=M; i++) {
-        dp[i] = 200;
+        dp[i] = INT_MAX;
     }
 
     for(int i=0; i<M; i++) {
