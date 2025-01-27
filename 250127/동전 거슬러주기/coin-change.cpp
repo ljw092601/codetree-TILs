@@ -14,7 +14,7 @@ int main() {
     }
 
     for(int i=1; i<=M; i++) {
-        dp[i] = INT_MAX;
+        dp[i] = 1e9;
     }
 
     for(int i=0; i<M; i++) {
