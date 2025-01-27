@@ -23,7 +23,7 @@ int main() {
         }
     }
 
-    cout << dp[M];
+    cout << (dp[M] == 1e9 ? -1 : dp[M]);
 
     return 0;
 }
