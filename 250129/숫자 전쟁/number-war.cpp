@@ -24,6 +24,7 @@ int main() {
     for(int i=0; i<n; i++) {
         for(int p=0; p<n; p++) {
             if (first_cards[i] > second_cards[p]) dp[i][p+1] = max(dp[i][p+1], dp[i][p] + second_cards[p]);
+            else if (first_cards[i] == second_cards[p]) dp[i+1][p+1] = max(dp[i+1][p+1], dp[i][p]);
             else {
                 dp[i+1][p+1] = max(dp[i+1][p+1], dp[i][p]);
                 dp[i+1][p] = max(dp[i+1][p], dp[i][p]);
