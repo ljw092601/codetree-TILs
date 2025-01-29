@@ -29,7 +29,7 @@ int main() {
         for(int p=0; p<=k; p++) {
             if(numbers[i] < 0) {
                 dp[i][0] = numbers[i];
-                dp[i][p+1] = dp[i-1][p] + numbers[i];
+                if(dp[i-1][p] != INT_MIN) dp[i][p+1] = dp[i-1][p] + numbers[i];
             }
             else {
                 dp[i][p] = max(dp[i-1][p] + numbers[i], numbers[i]);
