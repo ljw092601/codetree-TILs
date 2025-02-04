@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <algorithm>
 using namespace std;
 
 int n, k;
@@ -24,20 +24,20 @@ int main() {
         for(int p=0; p<=k; p++) {
             if(str[i] == 'L') {
                 if(dp[i-1][0][p]) {
-                    dp[i][0][p] = dp[i-1][0][p] + 1;
+                    dp[i][0][p] = max(dp[i][0][p], dp[i-1][0][p] + 1);
                 }
                 else if(dp[i-1][1][p] && p < k) {
-                    dp[i][0][p+1] = dp[i-1][1][p] + 1;
-                    dp[i][1][p] = dp[i-1][1][p];
+                    dp[i][0][p+1] = max(dp[i][0][p+1], dp[i-1][1][p] + 1);
+                    dp[i][1][p] = max(dp[i][1][p], dp[i-1][1][p]);
                 }
             }
             else {
                 if(dp[i-1][1][p]) {
-                    dp[i][1][p] = dp[i-1][1][p] + 1;
+                    dp[i][1][p] = max(dp[i][1][p], dp[i-1][1][p] + 1);
                 }
                 else if(dp[i-1][0][p] && p < k) {
-                    dp[i][1][p+1] = dp[i-1][0][p] + 1;
-                    dp[i][0][p] = dp[i-1][0][p];
+                    dp[i][1][p+1] = max(dp[i][1][p+1], dp[i-1][0][p] + 1);
+                    dp[i][0][p] = max(dp[i][0][p], dp[i-1][0][p]);
                 }
             }
         }
