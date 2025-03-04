@@ -13,15 +13,17 @@ int main() {
     int N = A.size();
     int M = B.size();
 
+    if(A[0] == B[0]) dp[0][0] = 1;
+    else dp[0][0] = 0;
 
-    for(int i=0; i<N; i++) {
+    for(int i=1; i<N; i++) {
         if(A[i] == B[0]) dp[i][0] = 1;
         else dp[i][0] = dp[i-1][0];
     }
 
-    for(int i=0; i<M; i++) {
+    for(int i=1; i<M; i++) {
         if(A[0] == B[i]) dp[0][i] = 1;
-        else dp[0][i] = dp[i-1][0];
+        else dp[0][i] = dp[0][i-1];
     }
 
     for(int i=1; i<N; i++) {
