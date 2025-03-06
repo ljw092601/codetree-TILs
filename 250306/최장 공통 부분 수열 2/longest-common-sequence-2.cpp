@@ -31,7 +31,24 @@ int main() {
     for(int i=1; i<N; i++) {
         for(int p=1; p<M; p++) {
             if(A[i] == B[p]) dp[i][p] = dp[i-1][p-1] + A[i];
-            else dp[i][p] = dp[i-1][p-1];
+            else {
+                if(dp[i-1][p-1].length() < dp[i-1][p].length()) {
+                    if(dp[i-1][p].length() < dp[i][p-1].length()) {
+                        dp[i][p] = dp[i][p-1];
+                    }
+                    else {
+                        dp[i][p] = dp[i-1][p];
+                    }
+                }
+                else {
+                    if(dp[i-1][p-1].length() < dp[i][p-1].length()) {
+                        dp[i][p] = dp[i][p-1];
+                    }
+                    else {
+                        dp[i][p] = dp[i-1][p-1];
+                    }
+                }
+            }
         }
     }
     
