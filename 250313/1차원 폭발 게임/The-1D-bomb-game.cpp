@@ -33,7 +33,7 @@ int main() {
     while(!end) {
         end = true;
         int i=0;
-        while(i+1<blocks.size()) {
+        while(i+m-1<blocks.size()) {
             int seq = 1;
             int find = i+1;
             while(blocks[i] == blocks[find]) {
