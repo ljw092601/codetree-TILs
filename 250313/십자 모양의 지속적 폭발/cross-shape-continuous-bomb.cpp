@@ -23,7 +23,7 @@ void print() {
 
 void gravity() {
     for(int i=0; i<n; i++) {
-        int temp[100] = {0,};
+        int temp[200] = {0,};
         int temp_idx = 0;
         for(int p=n-1; p>=0; p--) {
             if(grid[p][i]) {
